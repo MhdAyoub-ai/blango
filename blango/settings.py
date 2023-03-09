@@ -94,9 +94,9 @@ class Dev(Configuration):
     # Database
     # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-    DATABASES = DATABASES = values.DatabaseURLValue(f"sqlite:///{BASE_DIR}/db.sqlite3")
-
-
+    DATABASES = values.DatabaseURLValue(f"sqlite:///{BASE_DIR}/db.sqlite3")
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
     # Password validation
     # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
