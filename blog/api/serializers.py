@@ -26,6 +26,12 @@ class CommentSerializer(serializers.ModelSerializer):
         readonly = ["modified_at", "created_at"]
 
 
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = "__all__"
+
+
 class PostSerializer(serializers.ModelSerializer):
     tags = serializers.SlugRelatedField(
         slug_field="value", many=True, queryset=Tag.objects.all()
